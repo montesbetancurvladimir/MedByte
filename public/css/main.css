@@ -1,0 +1,107 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+body {
+    background-image: url(../img/base3.png);
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif !important;
+   
+}
+
+.configuracion:hover {
+    color: #66FFA0 !important;
+}
+
+.btn {
+    color: white !important;
+}
+
+.primario {
+    border: 1px solid #66FFA0 !important;
+   
+}
+.primario:hover{
+    color: #66FFA0 !important;
+    
+}
+
+.texto-primario{
+    color: #66FFA0 ;
+}
+.barra{
+    background-color: rgba(0, 0, 0, .4);
+    padding: 30px ;
+}
+.btn:hover{
+    border: 1px solid #66FFA0 !important;
+}
+
+a{
+    text-decoration: none !important;
+    
+}
+
+nav a{
+    text-decoration: none !important;
+    margin-left: 2rem;
+    transition: all ease 0.3s;
+}
+
+nav a:hover{
+    color: #66FFA0 !important ;
+    border: 1px solid #66FFA0 !important;
+    border-radius: 100px;
+    padding: 5px;
+    
+}
+
+nav a:first-of-type{
+    margin-left: 0px;
+}
+.transparente{
+    background-color: rgba(0,0,0,.4);
+}
+.transparente input{
+    text-align: center;
+}
+.transparente input::placeholder{
+    color: white;
+}
+.tarjeta{
+    width: 100%;
+    padding: 1rem;
+}
+@media (max-width: 500px) {
+    .tarjeta{
+        width: 100%;
+    }
+    
+}
+
+.transparente i{
+    color: #66FFA0;
+   
+}
+.rds{
+    background-color: white;
+    width: 50%;
+   
+}
+
+.google{
+    color: red;
+}
+.facebook{
+    color: blue;
+}
+.olvide-contra{
+    margin-left: 5px;
+}
+
+.recordar{
+    font-size: 16px;
+}
+.recordar a:hover{
+    color: white !important;
+}
