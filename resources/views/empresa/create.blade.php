@@ -9,18 +9,6 @@
 
     <x-auth-card class="p-4 w-full max-w-sm" >
 
-    <div>
-        <!-- Carga el primer registro de la tabla categoria -->
-        <select name="" id="_pais">
-            @foreach ($paises as $item)
-            <option value="{{$item->id}}">{{$item->descripcion}}</option>
-            @endforeach
-        </select>
-        <!-- Se llenan dinamicamente mediante la Api Fetch DE js-->
-        <select name="" id="_departamento"></select>
-        <select name="" id="_municipio"></select>
-    </div>
-
         <!-- Validation Errors -->
 
         <form method="POST" action="{{ route('Empresa.store') }}">
@@ -28,38 +16,48 @@
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Razón Social')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="nombre1" :value="old('nombre1')" required autofocus />
+                <x-input id="razon_social" class="block mt-1 w-full" type="text" name="razon_social" :value="old('nombre1')" required autofocus />
             </div><br>
 
             <div>
                 <x-label for="name" :value="__('Tipo Documento')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="nombre2" :value="old('nombre2')" required autofocus />
+                <select name="tipo_documento_id" class="form-select">
+                    <option>Seleccione una opción.</option>
+                    @foreach ($tipo_documento_empresa_id as $descripcion => $id)
+                        <option {{old("tipo_documento_empresa_id","") == $id ? "selected" : ""}} value="{{ $id }}">{{ $descripcion }}</option>
+                    @endforeach
+                </select>
             </div><br>
 
 
             <div>
                 <x-label for="name" :value="__('Número Documento')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="apellido1" :value="old('apellido1')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="numero_documento" :value="old('apellido1')" required autofocus />
             </div><br>
 
 
             <div>
                 <x-label for="name" :value="__('País')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="apellido2" :value="old('apellido2')" required autofocus />
+                <select name="tipo_pais_id" id="_pais">
+                    <option value=""">Seleccione una opción.</option>
+                    @foreach ($paises as $item)
+                    <option value="{{$item->id}}">{{$item->descripcion}}</option>
+                    @endforeach
+                </select>
             </div><br>
             <div>
                 <x-label for="name" :value="__('Departamento')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="apellido2" :value="old('apellido2')" required autofocus />
+                <select name="tipo_departamento_id" id="_departamento"></select>
             </div><br>
             <div>
                 <x-label for="name" :value="__('Municipio')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="apellido2" :value="old('apellido2')" required autofocus />
+                <select name="tipo_ciudad_id" id="_municipio"></select>
             </div><br>
 
 
             <div>
                 <x-label for="name" :value="__('Teléfono')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="celular" :value="old('celular')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="telefono" :value="old('celular')" required autofocus />
             </div>
 
 
@@ -73,7 +71,7 @@
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Dirección')" />
-                <x-input id="password" class="block mt-1 w-full" type="text" name="password" required autocomplete="new-password" />
+                <x-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" required autocomplete="new-password" />
             </div>
 
 

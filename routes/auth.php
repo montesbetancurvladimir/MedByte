@@ -11,6 +11,10 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 //Ruta - nombre función en el controlador - Nombre funcion en el controlador.
+Route::get('create-user', [RegisteredUserController::class, 'create_user_admin'])->name('create_user_admin');
+Route::post('create-user', [RegisteredUserController::class, 'store_user_admin'])->name('store_user_admin');
+
+
 Route::get('create', [RegisteredUserController::class, 'create_user'])->name('create');
 Route::post('create', [RegisteredUserController::class, 'store_user']);
 

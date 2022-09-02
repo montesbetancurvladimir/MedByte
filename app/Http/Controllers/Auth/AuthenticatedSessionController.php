@@ -27,9 +27,11 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
         if($usuario->contador == 1){
-            return view('dashboard_first');
+            return redirect("User/index");
+            //return view('auth.usuarios');
         }else{
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect("User/index");
+            //return redirect()->intended(RouteServiceProvider::HOME);
         }
 
     }
